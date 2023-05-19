@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Simple Bootstrap Home Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body>
+      <section aria-label="Newest Photos">
+        <div class="carousel">
+          <button class="carousel-button prev">&#8656</button>
+          <button class="carousel-button next">&#8658</button>
+          <ul>
+            <li class="slide">
+              <img src="/images/homework.jpg" alt="Homework Album">
+            </li>
+            <li class="slide">
+              <img src="images/discovery.jpg" alt="Discovery Album">
+            </li>
+            <li class="slide">
+              <img src="images/haa.jpg" alt="Humans After All Album">
+            </li>
+            <li class="slide">
+              <img src="images/ram.jpg" alt="Random Access Memories Album">
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="container">
+        <br>
+        <a href="/shop?rec=1">Homework</a>
+        <br>
+        <a href="/shop?rec=2">Discovery</a>
+        <br>
+        <a href="/shop?rec=3">Human After All</a>
+        <br>
+        <a href="/shop?rec=4">Random Access Memories</a>
+        <br>
+        <a class="btn btn-primary" href="checkout.html" role="button">Checkout</a>
+        <br>
+      </div>
+  </body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

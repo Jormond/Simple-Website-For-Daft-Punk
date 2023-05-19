@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+</head>
+	<style>
+		.centerContent{
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+	</style>
+</head>
+<body>
+	<div class="centerContent">
+		<h1 id="product"> <%= myMessage %> </h1>
+		<h2> <%= model %></h2>
+		<h2 id="price"> <%= myPrice %></h2>
+		<img src="images/<%= myImage%>" width ="200px">
+		<br> 
+		<select id="quantity" name="quantity">
+			<option value="0">0</option>
+			<option value="1" selected>1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+		<br>
+		<button onclick="addToCart()">Add to Cart</button>
+		<br><br>
+		<a href="home">Home Page</a>
+	</div>
+</body>
+</html>
+<script>
+	function addToCart(){
+		let product = document.getElementById("product").innerHTML;
+		let quantity = document.getElementById("quantity").value;
+		let price = document.getElementById("price").innerHTML;
+		let quan_price = {p: price, quan: quantity};
+		localStorage.setItem(product, JSON.stringify(quan_price));
+	}
+</script>
