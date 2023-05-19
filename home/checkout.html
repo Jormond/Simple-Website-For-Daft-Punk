@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title><br>
+    <style>
+        		div.container{
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+        button[type="submit"]:hover {
+            background-color: #0062cc;
+        }
+	</style>
+</head>
+    <body>
+        <div class="container">
+            <h1>Checkout</h1>
+            <h2 id="cart_items"></h2>
+            <h2 id="finalCost"></h2>
+            <br>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br><br>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required></textarea>
+                <br><br>
+                <label for="payment">Payment Method:</label>
+                <select id="payment" name="payment">
+                    <option value="credit-card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="stripe">Stripe</option>
+                </select>
+                <br><br>
+                <button type="submit">Place Order</button>
+                <br><br>
+                <a href="home">Back to shop</a>
+            </form>
+        </div>
+    </body>
+</html>
+<Script>
+    let costAll = 0;
+
+    for(i=0; i < localStorage.length; i++){
+        let product = localStorage.key(i);
+        let content = JSON.parse(localStorage.getItem(product));
+        let totalCost = content.quan * content.p;
+        costAll += totalCost;
+        if(content.quan > 0){
+            document.getElementById("cart_items").innerHTML += product + " x " + content.quan + " = " + totalCost + "<br>";
+        }
+        document.getElementById("finalCost").innerHTML = costAll;
+    }
+</Script>
